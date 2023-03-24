@@ -1,0 +1,40 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    - user: 'thom'
+
+  tasks:
+    - name: "Install system packages"
+      apt:
+        name:
+          - vim
+          - bat
+          - exa
+          - podman
+        state: latest
+
+    - name: "Copy .vimrc"
+      copy:
+        src: ./dotfiles/.vimrc
+        dest: "/home/{{ user }}/.vimrc"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0644'
+
+    - name: "Copy .aliases"
+      copy:
+        src: ./dotfiles/.aliases
+        dest: "/home/{{ user }}/.aliases"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0644'
+
+    - name: "Load aliases in .bashrc file"
+      blockinfile:
+        path: "/home/{{ user }}/.bashrc"
+        block: |
+          if [ -f ~/.aliases ]; then
+            source ~/.aliases
+          fi
+
