@@ -1,0 +1,35 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install required system packages
+      apt:
+        pkg:
+          - nfs-common
+          - rpcbind
+          - autofs
+        state: latest
+        update_cache: true
+
+    - name: system setup | autofs | copy auto.master config file
+      copy:
+        src: files/autofs/auto.master
+        dest: /etc/auto.master
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: system setup | autofs | copy auto.nfs config file
+      copy:
+        src: files/autofs/auto.nfs
+        dest: /etc/auto.nfs
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: autofs | start and enable daemon
+      service:
+        name: autofs
+        state: started
+        enabled: true
