@@ -1,7 +1,6 @@
 /mnt/Archive     -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Archive
-/mnt/Downloads   -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Downloads
-/mnt/Music       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media/Music
-/mnt/Media       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media
 /mnt/Data        -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Data
-/mnt/Software    -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Software
+/mnt/Downloads   -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Downloads
+/mnt/Media       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media
+/mnt/Music       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media/Music
 /mnt/Staging     -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Staging
