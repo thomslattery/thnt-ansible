@@ -1,0 +1,11 @@
+
+- block:
+  # Make sure users exist on the system
+  - import_tasks: users/thom.yml
+  - import_tasks: users/root.yml
+
+  # Install basic system utilities
+  - import_tasks: system/default.yml
+
+  rescue:
+    - set_fact: task_failed=true

@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install required system packages
-      apt:
+      package:
         pkg:
           - nfs-common
           - rpcbind

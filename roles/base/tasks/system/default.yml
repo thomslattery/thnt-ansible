@@ -1,0 +1,12 @@
+- name: system setup | utilities | install utility packages
+  package:
+    name:
+      - bat
+      - exa
+      - htop
+      - nmap
+      - traceroute
+      - vim-nox
+      - wget
+      - zsh
+    state: latest

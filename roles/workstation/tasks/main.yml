@@ -1,0 +1,14 @@
+- block:
+  ## User configs
+  - import_tasks: users/thom.yml
+
+  ## system changes
+  - import_tasks: system/autofs.yml
+  - import_tasks: system/flatpak.yml
+
+  ## install software
+  - import_tasks: software/nextcloud.yml
+  - import_tasks: software/vscode.yml
+
+  rescue:
+    - set_fact: task_failed=true
