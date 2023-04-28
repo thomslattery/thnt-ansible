@@ -1,31 +1,26 @@
----
-- hosts: localhost
-  become: true
+- name: Install required system packages
+  apt:
+    pkg:
+      - gnupg2
+      - software-properties-common
+      - apt-transport-https
+      - curl
+    state: latest
+    update_cache: true
 
-  tasks:
-    - name: Install required system packages
-      apt:
-        pkg:
-          - gnupg2
-          - software-properties-common
-          - apt-transport-https
-          - curl
-        state: latest
-        update_cache: true
+- name: Add Microsoft GPG key
+  apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
 
-    - name: Add Microsoft GPG key
-      apt_key:
-        url: https://packages.microsoft.com/keys/microsoft.asc
-        state: present
+- name: Add VS Code repository
+  apt_repository:
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    state: present
 
-    - name: Add VS Code repository
-      apt_repository:
-        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
-        state: present
-
-    - name: Update apt and install VS Code
-      apt:
-        name: code
-        state: latest
-        update_cache: true
+- name: Update apt and install VS Code
+  apt:
+    name: code
+    state: latest
+    update_cache: true
 

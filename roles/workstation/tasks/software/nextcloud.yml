@@ -1,36 +1,31 @@
----
-- hosts: localhost
-  become: true
+- name: Install Nextcloud packages
+  package:
+    pkg:
+      - nextcloud-desktop
+      - dolphin-nextcloud
+    state: latest
+    update_cache: true
 
-  tasks:
-    - name: Install Nextcloud packages
-      package:
-        pkg:
-          - nextcloud-desktop
-          - dolphin-nextcloud
-        state: latest
-        update_cache: true
+- name: Nextcloud create Sync directory
+  file:
+    path: /home/thom/Sync
+    state: directory
+    owner: thom
+    group: thom
+    mode: 0750
 
-    - name: Nextcloud create Sync directory
-      file:
-        path: /home/thom/Sync
-        state: directory
-        owner: thom
-        group: thom
-        mode: 0750
+- name: Nextcloud create config directory
+  file:
+    path: /home/thom/.config/Nextcloud
+    state: directory
+    owner: thom
+    group: thom
+    mode: 0750
 
-    - name: Nextcloud create config directory
-      file:
-        path: /home/thom/.config/Nextcloud
-        state: directory
-        owner: thom
-        group: thom
-        mode: 0750
-
-    - name: Nextcloud config | copy user config file
-      copy:
-        src: files/nextcloud.cfg
-        dest: /home/thom/.config/Nextcloud/nextcloud.cfg
-        owner: thom
-        group: thom
-        mode: 0640
+- name: Nextcloud config | copy user config file
+  copy:
+    src: files/nextcloud.cfg
+    dest: /home/thom/.config/Nextcloud/nextcloud.cfg
+    owner: thom
+    group: thom
+    mode: 0640
