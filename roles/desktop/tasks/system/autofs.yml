@@ -1,0 +1,28 @@
+- name: system | autofs | install packages
+  tags: desktop,laptop,autofs
+  package:
+    pkg:
+      - nfs-common
+      - rpcbind
+      - autofs
+    state: latest
+    update_cache: true
+
+- name: system | autofs | copy config files
+  tags: desktop,laptop,autofs
+  copy:
+    src: autofs/{{ item.src }}
+    dest: /etc/{{ item.dest }}
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - { src: 'auto.master', dest: 'auto.master' }
+    - { src: 'auto.nfs', dest: 'auto.nfs' }
+
+- name: system | autofs | start and enable daemon
+  tags: desktop,laptop,autofs
+  service:
+    name: autofs
+    state: started
+    enabled: true

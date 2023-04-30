@@ -1,0 +1,29 @@
+- name: software | Nextcloud | install packages
+  tags: desktop,laptop,nextcloud
+  package:
+    pkg:
+      - nextcloud-desktop
+      - dolphin-nextcloud
+    state: latest
+    update_cache: true
+
+- name: software | Nextcloud | create directories
+  tags: desktop,laptop,nextcloud
+  file:
+    path: /home/thom/{{ item }}
+    state: directory
+    owner: thom
+    group: thom
+    mode: 0750
+  with_items:
+    - .config/Nextcloud
+    - Sync
+
+- name: software | Nextcloud | copy user config file
+  tags: desktop,laptop,nextcloud
+  copy:
+    src: nextcloud/nextcloud.cfg
+    dest: /home/thom/.config/Nextcloud/nextcloud.cfg
+    owner: thom
+    group: thom
+    mode: 0640

@@ -1,17 +1,14 @@
-- name: Distribution
-  debug: msg="{{ ansible_distribution }} {{ ansible_distribution_release }}"
-
-
 - name: Add backports
+  tags: desktop,laptop,flatpak
   apt_repository:
     repo: deb http://deb.debian.org/debian {{ ansible_distribution_release }}-backports main
     state: present
     filename: backports
     update_cache: yes
-  when: (ansible_distribution_release == 'bullseye') or
-    (ansible_distribution_release == 'bookworm')
+  when: (ansible_distribution == 'Debian')
 
 - name: Install Flatpak
+  tags: desktop,laptop,flatpak
   apt:
     pkg: 
       - flatpak

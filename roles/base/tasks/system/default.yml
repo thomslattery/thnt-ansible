@@ -1,4 +1,5 @@
-- name: system setup | utilities | install utility packages
+- name: system | utilities | install utility packages
+  tags: base,desktop,laptop,server
   package:
     name:
       - bat

@@ -1,18 +1,12 @@
-# run roles
-- hosts: all
-  tags: base
+---
+- hosts: localhost
+  connection: local
   become: true
-  roles:
-    - base
 
-- hosts: workstation
-  tags: workstation
-  become: true
-  roles:
-    - workstation
+  tasks:
+    - name: distribution | debug
+      tags: always
+      debug: msg="{{ ansible_distribution }} {{ ansible_distribution_release }}"
 
-- hosts: server
-  tags: server
-  become: true
-  roles:
-    - server
+    - include: roles/base/tasks/main.yml
+    - include: roles/desktop/tasks/main.yml
