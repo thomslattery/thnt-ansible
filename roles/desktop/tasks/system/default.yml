@@ -1,0 +1,6 @@
+- name: system | utilities | standard desktop system packages
+  tags: desktop,laptop
+  package:
+    name:
+      - kde-plasma-desktop
+    state: latest

@@ -1,0 +1,9 @@
+- name: system | software | install standard desktop packages
+  tags: desktop,laptop
+  package:
+    name:
+      - chromium
+      - gwenview
+      - mpv
+      - vlc
+    state: latest
