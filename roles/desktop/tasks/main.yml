@@ -1,5 +1,7 @@
 - block:
+  - import_tasks: system/default.yml
   - import_tasks: system/autofs.yml
   - import_tasks: system/flatpak.yml
+  - import_tasks: software/default.yml
   - import_tasks: software/nextcloud.yml
   - import_tasks: software/vscode.yml
