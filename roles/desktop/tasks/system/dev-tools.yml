@@ -4,7 +4,9 @@
     name:
       - build-essential
       - libc6-dev
+      - libexpat1-dev
       - libssl-dev
+      - openjdk-17-jre
       - pkg-config
       - qtbase5-dev
       - zlib1g-dev
