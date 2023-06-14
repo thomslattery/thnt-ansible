@@ -1,4 +1,4 @@
-- name: Install required system packages
+- name: software | vs code | install required system packages
   tags: desktop,laptop,vscode
   apt:
     pkg:
@@ -9,19 +9,19 @@
     state: latest
     update_cache: true
 
-- name: Add Microsoft GPG key
+- name: software | vs code | add microsoft gpg key
   tags: desktop,laptop,vscode
   apt_key:
     url: https://packages.microsoft.com/keys/microsoft.asc
     state: present
 
-- name: Add VS Code repository
+- name: software | vs code | add vs code repository
   tags: desktop,laptop,vscode
   apt_repository:
     repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
     state: present
 
-- name: Update apt and install VS Code
+- name: software | vs code | install package
   tags: desktop,laptop,vscode
   apt:
     name: code

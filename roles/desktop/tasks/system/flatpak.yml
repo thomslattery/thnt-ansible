@@ -1,4 +1,4 @@
-- name: Install Flatpak
+- name: system | flatpak | install packages
   tags: desktop,laptop,flatpak
   apt:
     pkg: 

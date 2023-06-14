@@ -1,4 +1,4 @@
-- name: software | Nextcloud | install packages
+- name: software | nextcloud | install packages
   tags: desktop,laptop,nextcloud
   package:
     pkg:
@@ -7,7 +7,7 @@
     state: latest
     update_cache: true
 
-- name: software | Nextcloud | create directories
+- name: software | nextcloud | create directories
   tags: desktop,laptop,nextcloud
   file:
     path: /home/thom/{{ item }}
@@ -19,7 +19,7 @@
     - .config/Nextcloud
     - Sync
 
-- name: software | Nextcloud | copy user config file
+- name: software | nextcloud | copy user config file
   tags: desktop,laptop,nextcloud
   copy:
     src: nextcloud/nextcloud.cfg
