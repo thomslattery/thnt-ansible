@@ -1,3 +1,10 @@
+- name: software | file utilities | install packages
+  tags: desktop,laptop
+  package:
+    name:
+      - ark
+    state: latest
+
 - name: software | browser | install chromium
   tags: desktop,laptop
   package:
@@ -16,6 +23,8 @@
   tags: desktop,laptop
   package:
     name:
+      - libaacs0
+      - libbluray-bdj
       - libbluray2
       - mpv
       - vlc
