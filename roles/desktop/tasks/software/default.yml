@@ -1,9 +1,37 @@
-- name: system | software | install standard desktop packages
+- name: software | browser | install chromium
   tags: desktop,laptop
   package:
     name:
       - chromium
-      - gwenview
+    state: latest
+
+- name: software | browser | install firefox esr
+  tags: desktop,laptop,firefox-esr
+  package:
+    name:
+      - firefox-esr
+    state: latest
+
+- name: software | multimedia | install packages and libraries
+  tags: desktop,laptop
+  package:
+    name:
+      - libbluray2
       - mpv
       - vlc
+    state: latest
+
+- name: software | multimedia | install mkv processing packages
+  tags: desktop
+  package:
+    name:
+      - mkvtoolnix
+      - mkvtoolnix-gui
+    
+- name: software | photo | install photo packages
+  tags: desktop,laptop
+  package:
+    name:
+      - gwenview
+      - rapid-photo-downloader
     state: latest
