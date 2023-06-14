@@ -1,0 +1,6 @@
+- name: system | desktop environment | install kde plasma
+  tags: desktop,laptop,kde-plasma
+  package:
+    name:
+      - kde-plasma-desktop
+    state: latest
