@@ -1,0 +1,46 @@
+- name: "Load aliases in .bashrc file"
+  blockinfile:
+    path: "/home/thom/.bashrc"
+    block: |
+      if [ -f ~/.aliases ]; then
+        source ~/.aliases
+      fi
+
+- name: users | thom | copy dotfiles
+  #tags: dotfiles,users,thom,users,vim,zsh
+  copy:
+    src: users/thom/{{ item.src }}
+    dest: /home/thom/{{ item.dest }}
+    owner: thom
+    group: thom
+    mode: 0600
+  with_items:
+    - { src: 'aliases', dest: '.aliases' }
+    - { src: 'vimrc', dest: '.vimrc' }
+
+- name: users | thom | single click selects
+  tags: users,thom
+  community.general.kdeconfig:
+    path: /home/thom/.config/kdeglobals
+    values:
+      - group: KDE
+        key: SingleClick
+        value: false
+    owner: thom
+    group: thom
+    mode: 0400
+
+- name: users | thom | caps lock as compose
+  tags: users,thom
+  community.general.kdeconfig:
+    path: /home/thom/.config/kxkbrc
+    values:
+      - group: Layout
+        key: Options
+        value: 'compose:caps'
+      - group: Layout
+        key: ResetOldOptions
+        value: true
+    owner: thom
+    group: thom
+    mode: 0400
