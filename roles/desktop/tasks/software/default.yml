@@ -21,6 +21,15 @@
       - vlc
     state: latest
 
+- name: software | multimedia | install mkv related tools
+  tags: desktop
+  package:
+    name:
+      - libavcodec-dev
+      - libgl1-mesa-dev
+      - mkvtoolnix
+      - mkvtoolnix-gui
+
 - name: software | multimedia | install mkv processing packages
   tags: desktop
   package:

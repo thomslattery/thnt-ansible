@@ -1,0 +1,11 @@
+- name: system | dev-tools | install common build tools
+  tags: desktop,laptop
+  package:
+    name:
+      - build-essential
+      - libc6-dev
+      - libssl-dev
+      - pkg-config
+      - qtbase5-dev
+      - zlib1g-dev
+    state: latest
