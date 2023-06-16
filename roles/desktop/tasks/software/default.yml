@@ -19,6 +19,14 @@
       - firefox-esr
     state: latest
 
+- name: software | download | install transmission
+  tags: desktop,laptop,transmission
+  package:
+    name:
+      - transmission-gtk
+      - transmission-remote-gtk
+    state: latest
+
 - name: software | multimedia | install packages and libraries
   tags: desktop,laptop
   package:

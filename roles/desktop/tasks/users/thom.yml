@@ -44,3 +44,23 @@
     owner: thom
     group: thom
     mode: 0400
+
+- name: software | transmission | create directories
+  tags: users,thom
+  file:
+    path: /home/thom/{{ item }}
+    state: directory
+    owner: thom
+    group: thom
+    mode: 0750
+  with_items:
+    - .config/transmission-remote-gtk
+
+- name: software | transmission | copy user config file
+  tags: users,thom
+  copy:
+    src: transmission-remote-gtk/config.json
+    dest: /home/thom/.config/transmission-remote-gtk/config.json
+    owner: thom
+    group: thom
+    mode: 0640
