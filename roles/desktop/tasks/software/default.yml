@@ -3,6 +3,7 @@
   package:
     name:
       - ark
+      - kde-spectacle
     state: latest
 
 - name: software | browser | install chromium
@@ -36,6 +37,13 @@
       - libbluray2
       - mpv
       - vlc
+    state: latest
+
+- name: software | multimedia | install picard
+  tags: desktop,laptop
+  package:
+    name:
+      - picard
     state: latest
 
 - name: software | multimedia | install mkv related tools

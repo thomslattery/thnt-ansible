@@ -3,6 +3,7 @@
   package:
     name:
       - kde-plasma-desktop
+      - pkexec
     state: latest
 
 - name: system | network | fix network manager
