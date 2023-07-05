@@ -6,3 +6,12 @@
       - plasma-discover-backend-flatpak
     state: latest
     update_cache: true
+
+- name: system | flatpak | add flatpak repository
+  tags: desktop,laptop,flatpak
+  become: yes
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    method: system
+    state: present

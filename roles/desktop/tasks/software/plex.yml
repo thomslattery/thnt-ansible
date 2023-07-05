@@ -1,0 +1,13 @@
+- name: software | plex | install plex
+  tags: desktop,laptop,plex
+  flatpak:
+    name: tv.plex.PlexDesktop
+    method: system
+    state: present
+
+- name: software | plex | install plexamp
+  tags: desktop,laptop,plex
+  flatpak:
+    name: com.plexamp.Plexamp
+    method: system
+    state: present
