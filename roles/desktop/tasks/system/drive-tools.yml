@@ -1,0 +1,15 @@
+- name: system | lvm2 | install packages
+  tags: desktop,laptop,lvm
+  package:
+    pkg:
+      - lvm2
+    state: latest
+    update_cache: true
+
+- name: system | luks | install packages
+  tags: desktop,laptop,luks
+  package:
+    pkg:
+      - cryptsetup
+    state: latest
+    update_cache: true
