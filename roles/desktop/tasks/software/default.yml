@@ -40,30 +40,29 @@
     state: latest
 
 - name: software | multimedia | install picard
-  tags: desktop,laptop
+  tags: desktop,laptop,music
   package:
     name:
       - picard
     state: latest
 
-- name: software | multimedia | install mkv related tools
+- name: software | multimedia | install video libraries
   tags: desktop
   package:
     name:
       - libavcodec-dev
       - libgl1-mesa-dev
-      - mkvtoolnix
-      - mkvtoolnix-gui
 
-- name: software | multimedia | install mkv processing packages
-  tags: desktop
+- name: software | multimedia | install video processing packages
+  tags: desktop,video
   package:
     name:
+      - handbrake
       - mkvtoolnix
       - mkvtoolnix-gui
     
 - name: software | photo | install photo packages
-  tags: desktop,laptop
+  tags: desktop,laptop,photo
   package:
     name:
       - gwenview
