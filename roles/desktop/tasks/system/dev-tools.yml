@@ -1,13 +1,29 @@
 - name: system | dev-tools | install common build tools
-  tags: desktop,laptop
+  tags: desktop,laptop,dev
   package:
     name:
       - build-essential
       - libc6-dev
       - libexpat1-dev
       - libssl-dev
-      - openjdk-17-jre
       - pkg-config
       - qtbase5-dev
       - zlib1g-dev
+    state: latest
+
+- name: system | dev-tools | install openjdk
+  tags: desktop,laptop,dev,java
+  package:
+    name:
+      - openjdk-17-jre
+    state: latest
+
+- name: system | dev-tools | install ruby
+  tags: desktop,laptop,dev,ruby
+  package:
+    name:
+      - libruby
+      - ruby-dev
+      - ruby-gettext
+      - ruby-gtk3
     state: latest
