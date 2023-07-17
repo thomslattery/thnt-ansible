@@ -29,7 +29,7 @@
     state: latest
 
 - name: software | multimedia | install packages and libraries
-  tags: desktop,laptop
+  tags: desktop,laptop,multimedia
   package:
     name:
       - libaacs0
@@ -52,6 +52,24 @@
     name:
       - libavcodec-dev
       - libgl1-mesa-dev
+
+- name: software | multimedia | install audio processing packages
+  tags: desktop,audio
+  package:
+    name:
+      - audacity
+      - cd-discid
+      - cdparanoia
+      - cdrdao
+      - eject
+      - flac
+      - lame
+      - libcdio-utils
+      - mp3gain
+      - normalize-audio
+      - sox
+      - vorbis-tools
+      - vorbisgain
 
 - name: software | multimedia | install video processing packages
   tags: desktop,video
