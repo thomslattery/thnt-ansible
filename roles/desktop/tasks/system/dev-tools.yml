@@ -5,6 +5,7 @@
       - build-essential
       - libc6-dev
       - libexpat1-dev
+      - libgtk-4-dev
       - libssl-dev
       - pkg-config
       - qtbase5-dev
