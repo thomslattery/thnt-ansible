@@ -1,0 +1,24 @@
+- name: software | browser | remove firefox-esr
+  tags: desktop,laptop,firefox
+  apt:
+    name: firefox-esr
+    state: absent
+
+- name: software | browser | get mozilla signing key
+  tags: desktop,laptop,firefox
+  ansible.builtin.get_url:
+    url:  https://packages.mozilla.org/apt/repo-signing-key.gpg
+    dest: /etc/apt/keyrings/packages.mozilla.org.asc
+
+- name: software | browser | add mozilla repository
+  tags: desktop,laptop,firefox
+  apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main"
+    state: present
+    update_cache: yes
+
+- name: software | browser | install firefox
+  tags: desktop,laptop,firefox
+  apt:
+    name: firefox
+    state: present

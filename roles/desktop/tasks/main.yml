@@ -6,6 +6,7 @@
   - import_tasks: system/flatpak.yml
 
   - import_tasks: software/default.yml
+  - import_tasks: software/firefox.yml
   - import_tasks: software/nextcloud.yml
   - import_tasks: software/plex.yml
   - import_tasks: software/vscode.yml
