@@ -14,7 +14,7 @@
     state: latest
 
 - name: software | browser | install firefox esr
-  tags: desktop,laptop,firefox-esr
+  tags: firefox-esr
   package:
     name:
       - firefox-esr
