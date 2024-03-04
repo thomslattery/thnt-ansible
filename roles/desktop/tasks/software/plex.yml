@@ -1,5 +1,5 @@
 - name: software | plex | install plex
-  tags: desktop,laptop,plex
+  tags: desktop,plex
   flatpak:
     name: tv.plex.PlexDesktop
     method: system
