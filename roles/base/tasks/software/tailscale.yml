@@ -1,0 +1,19 @@
+- name: software | network | verify tailscale is installed
+  tags: always
+  package:
+    name: tailscale
+    state: present
+  check_mode: true
+  ignore_errors: yes
+  register: tailscale_check
+
+- name: software | network | download tailscale install script
+  get_url:
+    url: https://tailscale.com/install.sh
+    dest: /tmp/_ansible/install_tailscale.sh
+    mode: 0755
+  when: not tailscale_check.changed
+
+- name: software | network | verify tailscale is
+  shell: /tmp/_ansible/install_tailscale.sh
+  when: not tailscale_check.changed 
