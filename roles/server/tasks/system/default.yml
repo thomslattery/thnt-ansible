@@ -1,0 +1,7 @@
+- name: system | snapd | purge snapd
+  tags: server
+  package:
+    name:
+      - snapd
+    state: absent
+    purge: true
