@@ -13,13 +13,6 @@
       - chromium
     state: latest
 
-- name: software | browser | install firefox esr
-  tags: firefox-esr
-  package:
-    name:
-      - firefox-esr
-    state: latest
-
 - name: software | download | install transmission
   tags: desktop,laptop,transmission
   package:
