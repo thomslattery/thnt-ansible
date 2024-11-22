@@ -1,4 +1,3 @@
 /mnt/Archive     -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Archive
 /mnt/Data        -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Data
 /mnt/Media       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media
-/mnt/Music       -fstype=auto,noatime,timeo=14   substance.neverhood.space:/mnt/Media/Music
