@@ -10,3 +10,4 @@
 
     - include: roles/base/tasks/main.yml
     - include: roles/desktop/tasks/main.yml
+    - include: roles/server/tasks/main.yml
