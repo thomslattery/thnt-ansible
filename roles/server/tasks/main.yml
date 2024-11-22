@@ -1,0 +1,2 @@
+- block:
+  - import_tasks: system/default.yml
