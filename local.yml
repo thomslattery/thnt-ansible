@@ -8,6 +8,19 @@
       tags: always
       debug: msg="{{ ansible_distribution }} {{ ansible_distribution_release }}"
 
+    - name: ansible | setup | create temp directory
+      tags: always
+      ansible.builtin.file:
+        path: /tmp/_ansible
+        state: directory
+        mode: 0755
+
     - include: roles/base/tasks/main.yml
     - include: roles/desktop/tasks/main.yml
     - include: roles/server/tasks/main.yml
+
+    - name: ansible | cleanup | remove temp directory
+      tags: always
+      ansible.builtin.file:
+        path: /tmp/_ansible
+        state: absent
