@@ -14,6 +14,7 @@
   tags: desktop,laptop,firefox
   apt_repository:
     repo: "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main"
+    filename: mozilla
     state: present
     update_cache: yes
 

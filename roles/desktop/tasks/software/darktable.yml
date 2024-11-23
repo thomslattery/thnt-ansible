@@ -8,6 +8,7 @@
   tags: desktop,darktable
   apt_repository:
     repo: "deb [signed-by=/etc/apt/keyrings/packages.darktable.org.asc] http://download.opensuse.org/repositories/graphics:/darktable/Debian_12/ /"
+    filename: obs_darktable
     state: present
     update_cache: yes
 
