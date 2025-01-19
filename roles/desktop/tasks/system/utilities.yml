@@ -1,0 +1,24 @@
+- name: software | terminal | install kitty
+  tags: desktop,laptop,kitty
+  package:
+    name:
+      - kitty
+      - kitty-shell-integration
+      - kitty-terminfo
+    state: latest
+
+- name: software | security | install kwallet
+  tags: desktop,laptop,kwallet
+  package:
+    name:
+      - kwalletmanager
+      - kwalletcli
+      - ksshaskpass
+    state: latest
+
+- name: system | fonts
+  tags: desktop,laptop
+  package:
+    name:
+      - fonts-powerline
+    state: latest
