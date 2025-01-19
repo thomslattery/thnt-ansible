@@ -1,0 +1,31 @@
+- name: software | games | download steam deb
+  tags: desktop,laptop,games
+  get_url:
+    url: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+    dest: /tmp/_ansible/steam.deb
+  when: "'steam-launcher' not in ansible_facts.packages"
+
+- name: software | games | install steam
+  tags: desktop,laptop,games
+  apt:
+    deb: /tmp/_ansible/steam.deb
+  when: "'steam-launcher' not in ansible_facts.packages"
+
+- name: software | games | install required packages for steam
+  tags: desktop,laptop,games
+  package:
+    name:
+      - libc6:amd64
+      - libc6:i386
+      - libegl1:amd64
+      - libegl1:i386
+      - libgbm1:amd64
+      - libgbm1:i386
+      - libgl1-mesa-dri:amd64
+      - libgl1-mesa-dri:i386
+      - libgl1:amd64
+      - libgl1:i386
+      - steam-libs-amd64:amd64
+      - steam-libs-i386:i386
+      - xterm
+    state: latest
