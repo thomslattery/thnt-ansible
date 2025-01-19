@@ -20,7 +20,7 @@
     state: latest
 
 - name: system | dev-tools | install ruby
-  tags: desktop,laptop,dev,ruby
+  tags: optional,dev,ruby
   package:
     name:
       - libruby
