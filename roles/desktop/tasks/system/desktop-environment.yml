@@ -6,12 +6,12 @@
       - pkexec
     state: latest
 
-- name: system | network | fix network manager
-  tags: laptop,wifi-fix
-  community.general.kdeconfig:
-    path: /etc/NetworkManager/NetworkManager.conf
-    values:
-      - group: ifupdown
-        key: Managed
-        value: true
+# - name: system | network | fix network manager
+#   tags: laptop,wifi-fix
+#   community.general.kdeconfig:
+#     path: /etc/NetworkManager/NetworkManager.conf
+#     values:
+#       - group: ifupdown
+#         key: Managed
+#         value: true
         
