@@ -1,12 +1,12 @@
-- name: software | plex | install plex
-  tags: desktop,plex
+- name: software | multimedia | install plex
+  tags: optional,plex
   flatpak:
     name: tv.plex.PlexDesktop
     method: system
     state: present
 
-- name: software | plex | install plexamp
-  tags: desktop,laptop,plex
+- name: software | multimedia | install plexamp
+  tags: desktop,laptop,plexamp
   flatpak:
     name: com.plexamp.Plexamp
     method: system
