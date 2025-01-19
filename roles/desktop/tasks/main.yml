@@ -1,15 +1,17 @@
 - block:
   - import_tasks: system/autofs.yml
-  - import_tasks: system/drive-tools.yml
-  - import_tasks: system/dev-tools.yml
   - import_tasks: system/desktop-environment.yml
+  - import_tasks: system/dev-tools.yml
+  - import_tasks: system/drive-tools.yml
   - import_tasks: system/flatpak.yml
+  - import_tasks: system/utilities.yml
 
   - import_tasks: software/default.yml
   - import_tasks: software/darktable.yml
   - import_tasks: software/firefox.yml
-  - import_tasks: software/nextcloud.yml
+  # - import_tasks: software/nextcloud.yml
   - import_tasks: software/plex.yml
+  - import_tasks: software/steam.yml
   - import_tasks: software/vscode.yml
 
   - import_tasks: users/thom.yml
