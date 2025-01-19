@@ -8,6 +8,11 @@
       tags: always
       debug: msg="{{ ansible_distribution }} {{ ansible_distribution_release }}"
 
+    - name: distribution | check packages
+      tags: always
+      package_facts:
+        manager: auto
+
     - name: ansible | setup | create temp directory
       tags: always
       ansible.builtin.file:
