@@ -14,7 +14,7 @@
     state: latest
 
 - name: software | download | install transmission
-  tags: desktop,laptop,transmission
+  tags: optional,transmission
   package:
     name:
       - transmission-gtk
@@ -47,7 +47,7 @@
       - libgl1-mesa-dev
 
 - name: software | multimedia | install audio processing packages
-  tags: desktop,audio
+  tags: optional,audio
   package:
     name:
       - audacity
@@ -65,7 +65,7 @@
       - vorbisgain
 
 - name: software | multimedia | install video processing packages
-  tags: desktop,video
+  tags: optional,video
   package:
     name:
       - handbrake
@@ -79,3 +79,4 @@
       - gwenview
       - rapid-photo-downloader
     state: latest
+    
