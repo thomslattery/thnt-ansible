@@ -20,9 +20,9 @@
         state: directory
         mode: 0755
 
-    - include: roles/base/tasks/main.yml
-    - include: roles/desktop/tasks/main.yml
-    - include: roles/server/tasks/main.yml
+    - import_tasks: roles/base/tasks/main.yml
+    - import_tasks: roles/desktop/tasks/main.yml
+    - import_tasks: roles/server/tasks/main.yml
 
     - name: ansible | cleanup | remove temp directory
       tags: always
