@@ -45,22 +45,55 @@
     group: thom
     mode: 0400
 
-- name: software | transmission | create directories
+- name: user | thom | power notifications
   tags: users,thom
-  file:
-    path: /home/thom/{{ item }}
-    state: directory
-    owner: thom
-    group: thom
-    mode: 0750
-  with_items:
-    - .config/transmission-remote-gtk
+  community.general.kdeconfig:
+    path: /home/thom/.config/devicenotifications.notifyrc
+    values:
+      - group: Event/safelyRemovable
+        key: Action
+        value: Popup
+      - group: Event/safelyRemovable
+        key: Execute
+        value: ''
+      - group: Event/safelyRemovable
+        key: Logfile
+        value: ''
+      - group: Event/safelyRemovable
+        key: TTS
+        value: ''
+        
+- name: user | thom | previous session
+  tags: users,thom
+  community.general.kdeconfig:
+    path: /home/thom/.config/ksmserverrc
+    values:
+      - group: General
+        key: loginMode
+        value: emptySession
+      - group: 'LegacySession: saved at previous logout'
+        key: count
+        value: 0
+      - group: 'Session: saved at previous logout'
+        key: count
+        value: 0
 
-- name: software | transmission | copy user config file
-  tags: users,thom
-  copy:
-    src: transmission-remote-gtk/config.json
-    dest: /home/thom/.config/transmission-remote-gtk/config.json
-    owner: thom
-    group: thom
-    mode: 0640
+# - name: software | transmission | create directories
+#   tags: users,thom
+#   file:
+#     path: /home/thom/{{ item }}
+#     state: directory
+#     owner: thom
+#     group: thom
+#     mode: 0750
+#   with_items:
+#     - .config/transmission-remote-gtk
+
+# - name: software | transmission | copy user config file
+#   tags: users,thom
+#   copy:
+#     src: transmission-remote-gtk/config.json
+#     dest: /home/thom/.config/transmission-remote-gtk/config.json
+#     owner: thom
+#     group: thom
+#     mode: 0640
